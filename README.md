@@ -25,6 +25,7 @@ The default index `human-t2t-hla` comprises [T2T-CHM13v2.0](https://www.ncbi.nlm
 | `human-t2t-hla.argos-bacteria-985_rs-viral-202401_ml-phage-202401` | `human-t2t-hla` masked with 150mers for [985](https://github.com/bede/hostile/blob/main/paper/supplementary-table-2.tsv) [FDA-ARGOS](https://www.ncbi.nlm.nih.gov/bioproject/231221) **bacterial**, 18,719 RefSeq **viral**, and 26,928 [Millard Lab **phage**](https://millardlab.org/phage-genomes-jan-2024/) genomes | 2024-01 | 1,473,260 (**0.046%**) |
 |              `human-t2t-hla-argos985-mycob140`               | `human-t2t-hla` masked with 150mers for [985](https://github.com/bede/hostile/blob/main/paper/supplementary-table-2.tsv) [FDA-ARGOS](https://www.ncbi.nlm.nih.gov/bioproject/231221) **bacterial** & [140](https://github.com/bede/hostile/blob/main/paper/supplementary-table-2.tsv) **mycobacterial** genomes | 2023-07 | 319,752 (**0.010%**)   |
 |                         `mouse-mm39`                         | `GRCm39` ([`GCF_000001635.27`](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27)) | 2024-11 | 0 (**0%**)             |
+|                       `test-human-mit`                       | Human mitochondrial genome ([`NC_012920.1`](https://www.ncbi.nlm.nih.gov/nuccore/251831106)) **for testing purposes only** | 2026-03 | 0 (**0%**)             |
 
 *Performance of `human-t2t-hla` and `human-t2t-hla-argos985-mycob140` was evaluated in the [paper](https://doi.org/10.1093/bioinformatics/btad728)*
 
