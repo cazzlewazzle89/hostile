@@ -59,12 +59,12 @@
             }
         }
     },
-    "human-mit": {
+    "test-human-mit": {
         "assets": {
-            "human-mit.fa.gz": {
+            "test-human-mit.fa.gz": {
                 "sha256": "0fe8730c64fd61fa6d7276dcd5d94636ae144b94d84dbbf40ee110f0e5dab19b"
             },
-            "human-mit.tar": {
+            "test-human-mit.tar": {
                 "sha256": "c896c3a32d0a9581c9f0563d0130a3deb7aa98918b5d013b972cd9b22a7e5f64"
             }
         }
