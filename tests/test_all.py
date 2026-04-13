@@ -1082,3 +1082,37 @@ def test_stdin_paired_interleaved_minimap2(tmp_path):
     lines = contents.split("\n")
     assert lines[0] == "@Mycobacterium_tuberculosis/2"
     assert len(lines) == 5
+
+
+# Online (opt-in via `pytest -m online`) — exercises real index download from the bucket
+
+
+@pytest.mark.online
+def test_online_fetch_minimap2_single(tmp_path):
+    env = {**os.environ, "HOSTILE_CACHE_DIR": str(tmp_path)}
+    run(
+        f"hostile clean --aligner minimap2 --index test-human-mit"
+        f" --fastq1 {data_dir}/human_1_1.fastq.gz --output {tmp_path} --force",
+        env=env,
+    )
+    assert (tmp_path / "test-human-mit.fa.gz").is_file()
+
+
+@pytest.mark.online
+def test_online_fetch_bowtie2_paired(tmp_path):
+    env = {**os.environ, "HOSTILE_CACHE_DIR": str(tmp_path)}
+    run(
+        f"hostile clean --aligner bowtie2 --index test-human-mit"
+        f" --fastq1 {data_dir}/human_1_1.fastq.gz --fastq2 {data_dir}/human_1_2.fastq.gz"
+        f" --output {tmp_path} --force",
+        env=env,
+    )
+    assert (tmp_path / "test-human-mit.1.bt2").is_file()
+
+
+@pytest.mark.online
+def test_online_index_fetch(tmp_path):
+    env = {**os.environ, "HOSTILE_CACHE_DIR": str(tmp_path)}
+    run("hostile index fetch -n test-human-mit", env=env)
+    assert (tmp_path / "test-human-mit.fa.gz").is_file()
+    assert (tmp_path / "test-human-mit.1.bt2").is_file()

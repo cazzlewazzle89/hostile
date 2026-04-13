@@ -27,3 +27,4 @@ jobs:
           conda-remove-defaults: true
       - run: pip install '.[dev]'
       - run: python -m pytest
+      - run: python -m pytest -m online

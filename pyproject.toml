@@ -30,3 +30,9 @@ dev = [
     "pre-commit>=3.3.2",
     "flit>=3.9.0"
 ]
+
+[tool.pytest.ini_options]
+markers = [
+    "online: involves downloading standard test index from remote bucket",
+]
+addopts = "-m 'not online'"
