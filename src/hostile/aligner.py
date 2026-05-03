@@ -149,10 +149,9 @@ class Aligner:
         mapped_bam_path = output / f"{fastq_stem}.mapped.bam"
 
         bam_cmd = (
-            if output_bam:
-                bam_cmd = f" | tee >(samtools view -F 2304 -b - > '{mapped_bam_path}')"
-                else:
-                    bam_cmd = ""
+            f" | tee >(samtools view -F 2304 -b - > '{mapped_bam_path}')"
+            if output_bam
+            else ""
         )
 
         if not stdout and not force and fastq_out_path.exists():
@@ -250,10 +249,9 @@ class Aligner:
         mapped_bam_path = output / f"{fastq1_stem.removesuffix('_R1_paired')}.mapped.bam"
 
         bam_cmd = (
-            if output_bam:
-                bam_cmd = f" | tee >(samtools view -F 2304 -b - > '{mapped_bam_path}')"
-                else:
-                    bam_cmd = ""
+            f" | tee >(samtools view -F 2304 -b - > '{mapped_bam_path}')"
+            if output_bam
+            else ""
         )
 
         if (
