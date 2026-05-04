@@ -139,7 +139,7 @@ class Aligner:
         aligner_threads: int,
         compression_threads: int,
         force: bool,
-         output_bam: bool = False,
+        output_bam: bool,
     ) -> str:
         fastq, output = Path(fastq), Path(output)
         output.mkdir(exist_ok=True, parents=True)
@@ -238,7 +238,7 @@ class Aligner:
         aligner_threads: int,
         compression_threads: int,
         force: bool,
-        output_bam: bool = False,
+        output_bam: bool,
     ) -> str:
         fastq1, fastq2, output = Path(fastq1), Path(fastq2), Path(output)
         output.mkdir(exist_ok=True, parents=True)

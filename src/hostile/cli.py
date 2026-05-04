@@ -83,6 +83,7 @@ def clean(
             threads=threads,
             force=force,
             airplane=airplane,
+            output_bam=output_bam,
         )
     else:
         stats = lib.clean_fastqs(
@@ -98,6 +99,7 @@ def clean(
             threads=threads,
             force=force,
             airplane=airplane,
+            output_bam=output_bam,
         )
     print(
         json.dumps(stats, indent=4),
